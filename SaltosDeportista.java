@@ -11,6 +11,7 @@ public class SaltosDeportista{
         float longitudSalto, marcaPersonal, promedio, suma = 0;
         int saltosIgualMarcaPersonal = 0, saltosMayorMarcaPersonal = 0;
         marcaPersonal = leerDato("marca personal del deportista");
+        
         for(int i = 1; i<=8; i++){
             longitudSalto = leerDato("Ingrese el salto numero " + i);
             suma += longitudSalto; 
@@ -20,9 +21,8 @@ public class SaltosDeportista{
                 saltosMayorMarcaPersonal++;
         }
         promedio = suma/8; 
-        System.out.println("Saltos iguales a marca personal: " + saltosIgualMarcaPersonal);
-        System.out.println("Saltos mayores a marca personal: " + saltosMayorMarcaPersonal);
-        System.out.println("Promedio de saltos: " + promedio);
+
+        mostrarMensaje(saltosIgualMarcaPersonal, saltosMayorMarcaPersonal, promedio);
     }
 
     public static float leerDato(String datoSolicitado){
@@ -31,5 +31,11 @@ public class SaltosDeportista{
         System.out.print("Ingrese " + datoSolicitado + " : ");
         dato = sc.nextFloat();
         return dato;
+    }
+
+    public static void mostrarMensaje(int saltosIgualMarcaPersonal, int saltosMayorMarcaPersonal, float promedio){
+        System.out.println("Saltos iguales a marca personal: " + saltosIgualMarcaPersonal);
+        System.out.println("Saltos mayores a marca personal: " + saltosMayorMarcaPersonal);
+        System.out.println("Promedio de saltos: " + promedio);
     }
 }

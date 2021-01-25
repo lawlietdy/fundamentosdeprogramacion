@@ -2,29 +2,38 @@
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
-/* Crear y cargar una matriz de tamanio n x m y decir si
-es simetrica o no */
-public class MatrizSimetrica {
 
+public class MatrizSimetrica {
+    static int[][] matriz;
+    static int nFilas, nCol;
+    static boolean simetrica = true;
+    static Scanner entrada = new Scanner(System.in);
     public static void main(String[] args) {
-        int[][] matriz;
-        int nFilas, nCol;
-        boolean simetrica = true;
-        Scanner entrada = new Scanner(System.in);
+        
+        matriz = asignarTamano();
+        llenarMatriz(matriz);
+        identificarSimetria();
+    }
+
+    public static int[][] asignarTamano(){
+        int[][] x;
         nFilas = Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de filas: "));
         nCol = Integer.parseInt(JOptionPane.showInputDialog("Digite el numero de columnas: "));
+        x = new int [nFilas][nCol];
+        return x;
+    }
 
-        matriz = new int [nFilas][nCol];
-
+    public static void llenarMatriz(int[][] matriz){
         System.out.println("Digite una matriz: ");
-
         for(int i = 0; i<nFilas; i++){
             for(int j = 0; j<nCol; j++){
-                System.out.println("Matriz [" + i + "][" + j + "]: ");
+                System.out.print("Matriz [" + i + "][" + j + "]: ");
                 matriz[i][j] = entrada.nextInt();
             }
         }
+    }
 
+    public static void identificarSimetria(){
         if(nFilas == nCol){
             int i, j;
             i = 0;
@@ -47,7 +56,5 @@ public class MatrizSimetrica {
         else{
             JOptionPane.showMessageDialog(null, "La matriz no es simetrica");
         }
-
-        entrada.close();
     }
 }

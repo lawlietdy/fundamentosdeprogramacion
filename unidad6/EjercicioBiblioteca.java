@@ -24,11 +24,10 @@ import java.util.*;
 public class EjercicioBiblioteca{
 
     public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
         int multa = 0, libros, diasRetraso, i = 1, categoria1 = 0, categoria2 = 0, categoria3 = 0;
         int categoria4 = 0, categoria5 = 0, multaTotal = 0, sumaMulta = 0;
-        System.out.print("Ingrese la cantidad de libros: "); 
-        libros = sc.nextInt();
+        libros = leerDato("cantidad de libros");
+        
         while( i <= libros ){
             diasRetraso = (int)( Math.random()*10 );
             if( diasRetraso == 0 ) { 
@@ -58,11 +57,24 @@ public class EjercicioBiblioteca{
             i++;
         }
         
+        mostrarMensaje(categoria1, categoria2, categoria3, categoria4, categoria5, sumaMulta);
+    }
+
+
+    public static void mostrarMensaje(int categoria1, int categoria2, int categoria3, int categoria4, int categoria5, int sumaMulta){
         System.out.println( "\nCategoria de 0 dias: " + categoria1 + " libro(s)" );
         System.out.println( "\nCategoria de 1 a 4 dias: " + categoria2 + " libro(s)" );
         System.out.println( "\nCategoria de 5 a 8 dias: " + categoria3 + " libro(s)" );
         System.out.println( "\nCategoria de 9 a 10 dias: " + categoria4 + " libro(s)" );
         System.out.println( "\nCategoria de mas de 10 dias: " + categoria5 + " libro(s)" );
         System.out.println( "\nCosto total cobrado por todos los libros: $" + sumaMulta + ".00" );
+    }
+
+    public static int leerDato(String datoSolicitado){
+        Scanner sc = new Scanner(System.in);
+        int dato;
+        System.out.print("Ingrese " + datoSolicitado + " : ");
+        dato = sc.nextInt();
+        return dato;
     }
 }

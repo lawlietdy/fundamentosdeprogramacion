@@ -7,25 +7,6 @@ public class Matriz{
     public static void main(String[] args){
 
         Scanner entrada = new Scanner(System.in);
-        // Esta es de la manera manual
-        // int matriz[][] = { 
-        //     {1, 2, 3},  // 0
-        //     {4, 5, 6},  // 1
-        //     {7, 8, 9} }; //Manera Manual
-
-        // // Imprimir las matrices utilizando
-        // // dos bucles for anidados.
-
-        // for( int i = 0; i < 3; i++){ // Numero de filas
-        //     for( int j = 0; j < 3; j++)  // Numero de columnas
-        //         System.out.print( matriz[i][j] );
-            
-        //     System.out.println("");
-        // }
-
-        // System.out.println(matriz[1][1]);
-
-        // Manera dinamica con variables 
         int matriz[][], nFilas, nCol;
 
         nFilas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de filas: "));

@@ -1,28 +1,19 @@
 import java.util.Scanner;
 
 public class MatricesTranspuestas {
-    
+    static Scanner entrada = new Scanner(System.in);
+    static int[][] matriz = new int[3][3];
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        int[][] matriz = new int[3][3];
+        
+        llenarMatriz(matriz);
+        System.out.println("\nmatriz original: ");
+        mostrarMatriz(matriz);
+        transponerMatriz(matriz);
+        System.out.println("\nLa matriz compuesta es: ");
+        mostrarMatriz(matriz);
+    }
 
-        System.out.println("Digite la matriz: ");
-        for( int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
-                System.out.print("Matriz[" + i + "][" + j + "]: ");
-                matriz[i][j] = entrada.nextInt();
-            }
-        }
-
-        System.out.println("matriz original: ");
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++)
-                System.out.print(matriz[i][j] + " ");
-            System.out.println("");
-        }
-
-        // Transponiendo la matriz
-        // utilizando dos bucles
+    public static void transponerMatriz(int[][] matriz) {
         int aux;
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < i; j++){
@@ -31,13 +22,23 @@ public class MatricesTranspuestas {
                 matriz[j][i] = aux;
             }
         }
+    }
 
-        System.out.println("\nLa matriz compuesta es: ");
+    public static void llenarMatriz(int[][] matriz) {
+        System.out.println("Digite la matriz: ");
         for( int i = 0; i < 3; i++){
-            for( int j = 0; j < 3; j++)
+            for(int j = 0; j < 3; j++){
+                System.out.print("Matriz[" + i + "][" + j + "]: ");
+                matriz[i][j] = entrada.nextInt();
+            }
+        }
+    }
+
+    public static void mostrarMatriz(int[][] matriz){
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++)
                 System.out.print(matriz[i][j] + " ");
             System.out.println("");
         }
-        entrada.close();
     }
 }
