@@ -19,7 +19,7 @@ public class NumerosAleatorios{
         for(int i=1; i<=limite; i++){
             numero = (int) (Math.random()*100);
             suma += numero;
-            System.out.println("Numero: " + numero); // inciso a)
+            System.out.println("Numero: " + numero);
         }
         return suma;
     }

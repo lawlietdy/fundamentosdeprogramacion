@@ -1,9 +1,9 @@
 
 public class MatrizDiagonal {
     static int nFilas = 10, nCol = 10, i, j;
-    static int[][] matriz = new int[ nFilas ][ nCol ];
+    
     public static void main(String[] args) {
-        
+        int[][] matriz = new int[ nFilas ][ nCol ];
         llenarMatriz(matriz);
         System.out.println("\nMatriz original: \n");
         mostrarMatriz(matriz);
