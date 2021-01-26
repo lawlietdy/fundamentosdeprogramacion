@@ -2,7 +2,7 @@ import java.io.*;
 
 public class EjemploVarianzayDesviacion {
     public static void main(String args[]) throws IOException {
-        float sumaRango = 0, promedioRango = 0, elementoRango = 0, varianza = 0, desviacion = 0;
+        float sumaRango = 0, promedioRango = 0, varianza = 0, desviacion = 0;
         float[] rango = new float[250];
         
         llenarDatosAleatorios(rango);

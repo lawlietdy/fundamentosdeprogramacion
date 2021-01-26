@@ -23,12 +23,12 @@ public class GenerarNumerosAleatorios {
 
 	public static int generadorAleatorios(int total) {
 		int i = 0, numeroAleatorio = 0, sumaNumeros = 0;
-		for (i = 1; i <= 20; i = i + 1) {
+		for (i = 1; i <= total; i = i + 1) {
 			numeroAleatorio = (int) (Math.random() * 10);
 			System.out.println(numeroAleatorio);
 			sumaNumeros = sumaNumeros + numeroAleatorio;
 		}
-		
+
 		return sumaNumeros;
 	}
 }
