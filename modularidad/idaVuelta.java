@@ -1,26 +1,34 @@
 public class idaVuelta {
-public static void main(String args[]) {
+	static int i, relleno;
+	public static void main(String args[]) {
 
-int i,relleno;
-int ida[];
-ida = new int[15];
-int vuelta[];
-vuelta = new int[15];
+		int[] ida = new int[15];
+		int[] vuelta = new int[15];
 
-for (i=0;i<15;i++) {
-	relleno=(int)(Math.random() * 10);
-	ida[i] = relleno;
-}
+		llenarArreglo(ida);
+		vuelta = revertirArreglo(ida);
+		mostrarResultado(ida, vuelta);
 
-for (i=14;i>=0;i--)
-	vuelta[i] = ida[14-i];
+	}
 
+	public static void llenarArreglo(int[] arreglo){
+		for (i = 0; i < 15; i++) {
+			relleno = (int) (Math.random() * 10);
+			arreglo[i] = relleno;
+		}
+	}
 
-System.out.println("ida " + " - " + " vuelta");
+	public static int[] revertirArreglo(int[] arreglo){
+		int[] vuelta = new int[15];
+		for (i = 14; i >= 0; i--)
+			vuelta[i] = arreglo[14 - i];
+		
+		return vuelta;
+	}
 
-for (i=0;i<15;i++) 
-	System.out.println(ida[i] + "    -    " + vuelta[i]);
-
-
-}
+	public static void mostrarResultado(int[] arreglo, int[] arreglo2){
+		System.out.println("ida " + " - " + " vuelta");
+		for (i = 0; i < 15; i++)
+			System.out.println(arreglo[i] + "    -    " + arreglo2[i]);
+	}
 }
