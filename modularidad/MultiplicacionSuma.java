@@ -5,7 +5,7 @@ public class MultiplicacionSuma {
 	static BufferedReader al = new BufferedReader(ent);
 
 	public static void main(String[] args) throws IOException {
-		int numero, i = 0, cont = 0, numeroVeces = 0, suma = 0;
+		int numero, i = 0, cont = 0, numeroVeces = 0;
 
 		numero = obtenerValor("Ingrese el numero");
 		numeroVeces = obtenerValor("El numero multiplicador");
