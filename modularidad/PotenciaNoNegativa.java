@@ -5,7 +5,7 @@ public class PotenciaNoNegativa {
 	static BufferedReader al = new BufferedReader(ent);
 	public static void main(String[] args) throws IOException {
 
-		int numeroBase = 0, exponente = 0, i = 0, resultado = 0;
+		int numeroBase = 0, exponente = 0, resultado = 0;
 
 		numeroBase = obtenerValor("Ingresa un numero base positivo");
 		evaluacion(numeroBase);
